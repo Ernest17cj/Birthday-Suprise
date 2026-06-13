@@ -143,7 +143,7 @@
       <div class="hero-overlay">
         <div class="hero-tag">Forever Grateful for You</div>
         <h1 class="hero-title">You Make Life<br><span>So Amazing</span></h1>
-    
+      
       </div>
     </div>
   </div>
@@ -236,7 +236,6 @@ With all my love, always</p>
   </div>
 </section>
 
-
 <section class="countdown-section">
   <div class="section-head">
     <div class="eyebrow">Counting Every Precious Moment</div>
@@ -265,7 +264,9 @@ const IMG_CUTE     = "zee5.jpg"
 const IMG_JOLLY    = "zee9.jpg"
 const IMG_SASSY    = "zee7.jpg"
 const IMG_CLOSE    = "zee6.jpg"
- 
+const IMG_VIDEO2   = "zee 3.MP4"
+
+
 // Inject base64 src into all placeholder images
 document.querySelectorAll('img').forEach(img => {
   if(img.src.includes('IMG_PORTRAIT')) img.src = IMG_PORTRAIT;
@@ -281,7 +282,6 @@ const memSrcs = [IMG_PORTRAIT, IMG_DINNER, IMG_COUPLE, IMG_CUTE, IMG_JOLLY, IMG_
 const memCaps = ['Pure, effortless elegance.','Her vibe: unbothered and flawless.','Every moment with you is a treasure.','A true Angel','Looking cute always','Clock IT!!'];
 const memImg = document.getElementById('memMain');
 const memCap = document.getElementById('memCaption');
-
 
 function switchMem(idx,el){
   memImg.classList.add('fade-out');
