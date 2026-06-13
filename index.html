@@ -190,8 +190,9 @@ With all my love, always</p>
       <div class="gallery-card center-card"><img src="IMG_PORTRAIT" alt="Portrait"><div class="gallery-card-label"><span>Pure Elegance</span></div></div>
       <div class="gallery-card"><img src="IMG_DINNER" alt="Dinner"><div class="gallery-card-label"><span>Fine Dining Vibes</span></div></div>
       <div class="gallery-card"><img src="IMG_COUPLE" alt="Together"><div class="gallery-card-label"><span>Us, Always</span></div></div>
+      <div class="gallery-card"><img src="IMG_CLOSE" alt="Candid"><div class="gallery-card-label"><span>Candid Beauty</span></div></div>
       <div class="gallery-card"><img src="IMG_PORTRAIT" alt="Portrait 2"><div class="gallery-card-label"><span>Radiant Queen</span></div></div>
-      <div class="gallery-card"><img src="IMG_DINNER" alt="Candid"><div class="gallery-card-label"><span>Candid Beauty</span></div></div>
+      
     </div>
   </div>
   <div class="gallery-controls">
@@ -222,15 +223,19 @@ With all my love, always</p>
     <h2>Moments We <em>Treasure</em> 📸</h2>
   </div>
   <div class="memories-main">
-    <img src="IMG_PORTRAIT" alt="Memory" id="memMain">
+    <img src="IMG_DINNER" alt="Memory" id="memMain">
     <div class="memories-caption" id="memCaption">Pure, effortless elegance.</div>
   </div>
   <div class="memories-thumbs" id="memThumbs">
     <div class="mem-thumb active" onclick="switchMem(0,this)"><img src="IMG_PORTRAIT" alt=""></div>
     <div class="mem-thumb" onclick="switchMem(1,this)"><img src="IMG_DINNER" alt=""></div>
     <div class="mem-thumb" onclick="switchMem(2,this)"><img src="IMG_COUPLE" alt=""></div>
+    <div class="mem-thumb" onclick="switchMem(3,this)"><img src="IMG_CUTE" alt=""></div>
+    <div class="mem-thumb" onclick="switchMem(4,this)"><img src="IMG_JOLLY" alt=""></div>
+    <div class="mem-thumb" onclick="switchMem(5,this)"><img src="IMG_SASSY" alt=""></div>
   </div>
 </section>
+
 
 <section class="countdown-section">
   <div class="section-head">
@@ -256,24 +261,27 @@ With all my love, always</p>
 const IMG_PORTRAIT = "zee0.jpg"
 const IMG_DINNER   = "zee1.jpg"
 const IMG_COUPLE   = "zee2.jpg"
-const IMG_CUTE     = "zee3.jpg"
-const IMG_JOLLY    = "zee4.jpg"
-const IMG_SASSY    = "zee5.jpg"
-const IMG_VIDEO1   = "zee8.MOV"
-const IMG_VIDEO2   = "zee 3.MP4"
-
+const IMG_CUTE     = "zee5.jpg"
+const IMG_JOLLY    = "zee9.jpg"
+const IMG_SASSY    = "zee7.jpg"
+const IMG_CLOSE    = "zee6.jpg"
  
 // Inject base64 src into all placeholder images
 document.querySelectorAll('img').forEach(img => {
   if(img.src.includes('IMG_PORTRAIT')) img.src = IMG_PORTRAIT;
   else if(img.src.includes('IMG_DINNER')) img.src = IMG_DINNER;
   else if(img.src.includes('IMG_COUPLE')) img.src = IMG_COUPLE;
+  else if(img.src.includes('IMG_CUTE')) img.src = IMG_CUTE;
+  else if(img.src.includes('IMG_JOLLY')) img.src = IMG_JOLLY;
+  else if(img.src.includes('IMG_SASSY')) img.src = IMG_SASSY;
+  else if(img.src.includes('IMG_CLOSE')) img.src = IMG_CLOSE;
 });
 
-const memSrcs = [IMG_PORTRAIT, IMG_DINNER, IMG_COUPLE];
-const memCaps = ['Pure, effortless elegance.','Her vibe: unbothered and flawless.','Every moment with you is a treasure.'];
+const memSrcs = [IMG_PORTRAIT, IMG_DINNER, IMG_COUPLE, IMG_CUTE, IMG_JOLLY, IMG_SASSY];
+const memCaps = ['Pure, effortless elegance.','Her vibe: unbothered and flawless.','Every moment with you is a treasure.','A true Angel','Looking cute always','Clock IT!!'];
 const memImg = document.getElementById('memMain');
 const memCap = document.getElementById('memCaption');
+
 
 function switchMem(idx,el){
   memImg.classList.add('fade-out');
@@ -317,7 +325,7 @@ const letterCard=document.getElementById('letterCard');
 const lObs=new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('bounce-in'); }); },{threshold:0.2});
 lObs.observe(letterCard);
 
-const birthday=new Date('1996-06-12T00:00:00');
+const birthday=new Date('1998-06-12T00:00:00');
 function updateCD(){ const now=new Date(); const diff=now-birthday; const days=Math.floor(diff/86400000); const hours=Math.floor((diff%86400000)/3600000); const mins=Math.floor((diff%3600000)/60000); const secs=Math.floor((diff%60000)/1000); document.getElementById('cdD').textContent=String(days).padStart(5,'0'); document.getElementById('cdH').textContent=String(hours).padStart(2,'0'); document.getElementById('cdM').textContent=String(mins).padStart(2,'0'); document.getElementById('cdS').textContent=String(secs).padStart(2,'0'); }
 updateCD(); setInterval(updateCD,1000);
 </script>
